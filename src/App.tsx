@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { menuLoader } from './api/loader'
+import { menuLoader, orderLoader } from './api/loader'
 import Error from './components/Error'
 import AppLayout from './containers/AppLayout'
 import CartPage from './pages/CartPage'
@@ -35,8 +35,9 @@ const router = createBrowserRouter([
         errorElement: <Error />,
       },
       {
-        path: '/order/:orderID',
+        path: '/order/:orderId',
         element: <OrderPage />,
+        loader: orderLoader, // FIXME:
         errorElement: <Error />,
       },
     ],
