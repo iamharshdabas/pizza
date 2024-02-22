@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <ul>
       {routes.map((route) => (
-        <li>
+        <li key={route.name}>
           <NavLink to={route.path}>{route.name}</NavLink>
         </li>
       ))}
