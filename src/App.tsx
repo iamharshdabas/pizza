@@ -6,16 +6,39 @@ import HomePage from './pages/HomePage'
 import MenuPage from './pages/MenuPage'
 import NewOrderPage from './pages/NewOrderPage'
 import OrderPage from './pages/OrderPage'
+import Error from './components/Error'
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
-      { path: '/', element: <HomePage /> },
-      { path: '/menu', element: <MenuPage />, loader: menuLoader },
-      { path: '/cart', element: <CartPage /> },
-      { path: '/order/new', element: <NewOrderPage /> },
-      { path: '/order/:orderID', element: <OrderPage /> },
+      {
+        path: '/',
+        element: <HomePage />,
+        errorElement: <Error />,
+      },
+      {
+        path: '/menu',
+        element: <MenuPage />,
+        loader: menuLoader,
+        errorElement: <Error />,
+      },
+      {
+        path: '/cart',
+        element: <CartPage />,
+        errorElement: <Error />,
+      },
+      {
+        path: '/order/new',
+        element: <NewOrderPage />,
+        errorElement: <Error />,
+      },
+      {
+        path: '/order/:orderID',
+        element: <OrderPage />,
+        errorElement: <Error />,
+      },
     ],
   },
 ])
