@@ -1,12 +1,12 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { menuLoader } from './api/loader'
+import Error from './components/Error'
 import AppLayout from './containers/AppLayout'
 import CartPage from './pages/CartPage'
 import HomePage from './pages/HomePage'
 import MenuPage from './pages/MenuPage'
 import NewOrderPage from './pages/NewOrderPage'
 import OrderPage from './pages/OrderPage'
-import Error from './components/Error'
 
 const router = createBrowserRouter([
   {
