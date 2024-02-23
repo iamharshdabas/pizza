@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import NavBar from '../components/NavBar'
 import React, { useState } from 'react'
-import Input from '../components/Input'
 
 const Header = () => {
   const navigate = useNavigate()
@@ -20,7 +19,7 @@ const Header = () => {
     <div>
       <NavBar />
       <form onSubmit={handleSubmit}>
-        <Input
+        <input
           value={query}
           onChange={handleChange}
           placeholder="Search Order"
