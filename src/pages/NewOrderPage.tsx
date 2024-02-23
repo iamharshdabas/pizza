@@ -1,4 +1,4 @@
-import { Form } from 'react-router-dom'
+import { Form, useNavigation } from 'react-router-dom'
 
 const fakeCart = [
   {
@@ -25,6 +25,9 @@ const fakeCart = [
 ]
 
 const NewOrderPage = () => {
+  const navigation = useNavigation()
+  const isSubmitting = navigation.state === 'submitting'
+
   return (
     <Form method="POST">
       <div>
@@ -44,7 +47,9 @@ const NewOrderPage = () => {
         <input type="checkbox" name="priority" />
       </div>
       <input type="hidden" name="cart" value={JSON.stringify(fakeCart)} />
-      <button>Order</button>
+      <button disabled={isSubmitting}>
+        {isSubmitting ? 'Placing Order' : 'Order Now'}
+      </button>
     </Form>
   )
 }
