@@ -1,4 +1,4 @@
-export type cartPizzaType = {
+type CartPizzaType = {
   addIngredients: string[]
   name: string
   pizzaId: number
@@ -7,3 +7,5 @@ export type cartPizzaType = {
   totalPrice: number
   unitPrice: number
 }
+
+export default CartPizzaType

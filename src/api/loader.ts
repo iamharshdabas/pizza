@@ -1,4 +1,3 @@
-import { paramsType } from '../types/paramsType'
 import { getMenu, getOrder } from './restaurantApi'
 
 export const menuLoader = async () => {
@@ -6,11 +5,13 @@ export const menuLoader = async () => {
   return menu.data
 }
 
-type orderLoaderType = {
-  params: paramsType
+type OrderLoaderType = {
+  params: {
+    orderId: string
+  }
 }
 
-export const orderLoader = async ({ params }: orderLoaderType) => {
+export const orderLoader = async ({ params }: OrderLoaderType) => {
   const order = await getOrder(params.orderId)
   return order
 }

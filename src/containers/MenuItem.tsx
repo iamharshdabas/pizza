@@ -1,7 +1,7 @@
-import { pizzaType } from '../types/pizza'
+import PizzaType from '../types/Pizza'
 
 type Props = {
-  pizza: pizzaType
+  pizza: PizzaType
 }
 
 const MenuItem = ({ pizza }: Props) => {

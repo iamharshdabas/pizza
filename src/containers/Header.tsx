@@ -1,6 +1,6 @@
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import NavBar from '../components/NavBar'
-import React, { useState } from 'react'
 
 const Header = () => {
   const navigate = useNavigate()

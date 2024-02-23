@@ -1,9 +1,9 @@
 import { useLoaderData } from 'react-router-dom'
 import MenuItem from '../containers/MenuItem'
-import { pizzaType } from '../types/pizza'
+import PizzaType from '../types/Pizza'
 
 const MenuPage = () => {
-  const menu: pizzaType[] = useLoaderData() as pizzaType[]
+  const menu: PizzaType[] = useLoaderData() as PizzaType[]
 
   return (
     <ul>

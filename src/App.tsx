@@ -1,4 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { newOrderAction } from './api/action'
 import { menuLoader, orderLoader } from './api/loader'
 import Error from './components/Error'
 import AppLayout from './containers/AppLayout'
@@ -7,7 +8,6 @@ import HomePage from './pages/HomePage'
 import MenuPage from './pages/MenuPage'
 import NewOrderPage from './pages/NewOrderPage'
 import OrderPage from './pages/OrderPage'
-import { newOrderAction } from './api/action'
 
 const router = createBrowserRouter([
   {

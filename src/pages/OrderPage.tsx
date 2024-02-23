@@ -1,14 +1,13 @@
-// IIDSAT
 import { useLoaderData } from 'react-router-dom'
-import { orderType } from '../types/orderType'
+import OrderType from '../types/OrderType'
 
 type orderProps = {
-  data: orderType
+  data: OrderType
 }
 
 const OrderPage = () => {
   const order: orderProps = useLoaderData() as orderProps
-  const data: orderType = order.data
+  const data: OrderType = order.data
 
   return (
     <>

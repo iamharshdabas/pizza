@@ -1,5 +1,4 @@
-import { newOrderType } from '../types/newOrderType'
-import { orderIdType } from '../types/orderIdType'
+import NewOrderType from '../types/NewOrderType'
 
 const BASE_URL = 'https://react-fast-pizza-api.onrender.com/api'
 
@@ -11,7 +10,7 @@ export const getMenu = async () => {
   return data
 }
 
-export const getOrder = async (id: orderIdType) => {
+export const getOrder = async (id: string) => {
   const res = await fetch(`${BASE_URL}/order/${id}`)
   if (!res.ok) throw Error('Error during fetching order')
 
@@ -19,7 +18,7 @@ export const getOrder = async (id: orderIdType) => {
   return data
 }
 
-export const createOrder = async (newOrder: newOrderType) => {
+export const createOrder = async (newOrder: NewOrderType) => {
   const res = await fetch(`${BASE_URL}/order/`, {
     method: 'POST',
     body: JSON.stringify(newOrder),

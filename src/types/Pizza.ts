@@ -1,4 +1,4 @@
-export type pizzaType = {
+type PizzaType = {
   id: number
   imageUrl: string
   ingredients: string[]
@@ -6,3 +6,5 @@ export type pizzaType = {
   soldOut: boolean
   unitPrice: number
 }
+
+export default PizzaType

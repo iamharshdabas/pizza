@@ -1,7 +1,7 @@
-import { cartPizzaType } from './cartPizzaType'
+import CartPizzaType from './CartPizzaType'
 
-export type orderType = {
-  cart: cartPizzaType[]
+type OrderType = {
+  cart: CartPizzaType[]
   customer: string
   estimatedDelivery: string
   id: string
@@ -10,3 +10,5 @@ export type orderType = {
   priorityPrice: number
   status: string
 }
+
+export default OrderType
