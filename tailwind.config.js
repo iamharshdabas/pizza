@@ -4,10 +4,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [
-    require('@catppuccin/tailwindcss')({
-      prefix: 'ctp',
-      defaultFlavour: 'mocha',
-    }),
-  ],
+  plugins: [],
 }
