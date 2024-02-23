@@ -1,5 +1,4 @@
 import { useNavigate, useRouteError } from 'react-router-dom'
-import Button from './Button'
 
 const Error = () => {
   const error = useRouteError()
@@ -11,7 +10,7 @@ const Error = () => {
     <div>
       <h1>Something Went Wrong</h1>
       <h2>{error.data || error.message}</h2>
-      <Button onCLick={handleBack}>Back</Button>
+      <button onClick={handleBack}>back</button>
     </div>
   )
 }
