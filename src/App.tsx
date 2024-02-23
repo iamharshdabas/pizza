@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage'
 import MenuPage from './pages/MenuPage'
 import NewOrderPage from './pages/NewOrderPage'
 import OrderPage from './pages/OrderPage'
+import { newOrderAction } from './api/action'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: '/order/new',
         element: <NewOrderPage />,
+        action: newOrderAction,
         errorElement: <Error />,
       },
       {
