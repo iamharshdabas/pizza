@@ -7,13 +7,13 @@ const AppLayout = () => {
   const isLoading = navigation.state === 'loading'
 
   return (
-    <>
+    <div className="container mx-auto flex h-dvh flex-col bg-stone-900 px-8 text-stone-100">
       {isLoading && <Loading />}
       <Header />
-      <main>
+      <main className="grow">
         <Outlet />
       </main>
-    </>
+    </div>
   )
 }
 
