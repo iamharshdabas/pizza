@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import NavBar from '../components/NavBar'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Header = () => {
   const navigate = useNavigate()
@@ -16,10 +15,13 @@ const Header = () => {
   }
 
   return (
-    <div>
-      <NavBar />
+    <div className="flex justify-between py-4">
+      <Link className="text-2xl font-bold uppercase tracking-widest" to={'/'}>
+        pizza Co.
+      </Link>
       <form onSubmit={handleSubmit}>
         <input
+          className="w-40 rounded-2xl bg-amber-800 px-4 py-1 placeholder:text-stone-100"
           value={query}
           onChange={handleChange}
           placeholder="Search Order"
