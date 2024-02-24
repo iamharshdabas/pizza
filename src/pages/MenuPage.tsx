@@ -6,7 +6,7 @@ const MenuPage = () => {
   const menu: PizzaType[] = useLoaderData() as PizzaType[]
 
   return (
-    <ul>
+    <ul className="space-y-4">
       {menu.map((pizza) => (
         <MenuItem pizza={pizza} key={pizza.id} />
       ))}

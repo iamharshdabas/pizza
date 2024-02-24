@@ -10,7 +10,7 @@ const AppLayout = () => {
     <div className="container mx-auto flex h-dvh flex-col bg-stone-900 px-8 text-stone-100">
       {isLoading && <Loading />}
       <Header />
-      <main className="grow">
+      <main className="grow overflow-scroll">
         <Outlet />
       </main>
     </div>
