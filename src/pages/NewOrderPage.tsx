@@ -29,25 +29,43 @@ const NewOrderPage = () => {
   const isSubmitting = navigation.state === 'submitting'
 
   return (
-    <Form method="POST">
-      <div>
-        <label>Name</label>
-        <input type="text" name="customer" required />
+    <Form className="space-y-4 rounded-2xl bg-stone-800 p-4" method="POST">
+      <div className="space-x-4">
+        <label className="text-xl">Name</label>
+        <input
+          className="rounded-xl bg-amber-800 px-4 py-2"
+          type="text"
+          name="customer"
+          required
+        />
       </div>
-      <div>
-        <label>Phone number</label>
-        <input type="tel" name="phone" required />
+      <div className="space-x-4">
+        <label className="text-xl">Phone number</label>
+        <input
+          className="rounded-xl bg-amber-800 px-4 py-2"
+          type="tel"
+          name="phone"
+          required
+        />
       </div>
-      <div>
-        <label>Address</label>
-        <input type="text" name="address" required />
+      <div className="space-x-4">
+        <label className="text-xl">Address</label>
+        <input
+          className="rounded-xl bg-amber-800 px-4 py-2"
+          type="text"
+          name="address"
+          required
+        />
       </div>
-      <div>
-        <label>Priority</label>
-        <input type="checkbox" name="priority" />
+      <div className="space-x-4">
+        <label className="text-xl">Priority</label>
+        <input className="rounded-xl" type="checkbox" name="priority" />
       </div>
       <input type="hidden" name="cart" value={JSON.stringify(fakeCart)} />
-      <button disabled={isSubmitting}>
+      <button
+        className="rounded-xl bg-amber-600 px-4 py-2 font-bold uppercase text-stone-900"
+        disabled={isSubmitting}
+      >
         {isSubmitting ? 'Placing Order' : 'Order Now'}
       </button>
     </Form>
