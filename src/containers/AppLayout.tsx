@@ -7,10 +7,10 @@ const AppLayout = () => {
   const isLoading = navigation.state === 'loading'
 
   return (
-    <div className="container mx-auto flex h-dvh flex-col bg-stone-900 px-8 text-stone-100">
+    <div className="container mx-auto flex h-dvh flex-col px-8">
       {isLoading && <Loading />}
       <Header />
-      <main className="grow overflow-scroll">
+      <main className="h-full">
         <Outlet />
       </main>
     </div>

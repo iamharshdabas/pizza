@@ -8,12 +8,12 @@ const MenuPage = () => {
 
   return (
     <>
-      <ul className="space-y-4">
+      <CartFooter />
+      <ul className="mt-8 grid grid-cols-1 gap-8">
         {menu.map((pizza) => (
           <MenuItem pizza={pizza} key={pizza.id} />
         ))}
       </ul>
-      <CartFooter />
     </>
   )
 }
