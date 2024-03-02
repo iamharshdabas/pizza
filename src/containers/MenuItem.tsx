@@ -6,14 +6,14 @@ type Props = {
 
 const MenuItem = ({ pizza }: Props) => {
   return (
-    <li className="relative overflow-hidden rounded-xl border border-gray-600 sm:static sm:flex">
+    <li className="flex flex-col overflow-hidden rounded-xl border border-gray-600 sm:flex-row">
       <div>
         <img className="mx-auto" src={pizza.imageUrl} alt={pizza.name} />
       </div>
 
-      <div className="absolute bottom-0 flex w-full items-center justify-between bg-black px-4 py-1 sm:static sm:flex-col">
+      <div className="flex items-center justify-between bg-black p-4 sm:flex-col sm:items-start">
         <div>
-          <h1 className="text-xl font-bold">{pizza.name}</h1>
+          <h1 className="pb-1 text-xl font-bold">{pizza.name}</h1>
           <ul className="flex flex-wrap">
             {pizza.ingredients.map((child) => (
               <li className="pr-2 opacity-80">{child}</li>
