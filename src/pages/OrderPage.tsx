@@ -22,20 +22,34 @@ const OrderPage = () => {
   const data: OrderType = order.data
 
   return (
-    <div className="space-y-2 rounded-2xl bg-amber-950 p-4 font-mono">
-      <div className="text-xl uppercase">Name: {data.customer}</div>
-      <div className="text-xl uppercase">OrderId: {data.id}</div>
-      <ul className="flex gap-4">
-        Cart:
-        {data.cart.map((pizza) => (
-          <li key={pizza.pizzaId}>{pizza.name}</li>
-        ))}
-      </ul>
-      <div>Priority: {data.priority ? 'YES' : 'NO'}</div>
-      <div>Priority Price: {data.priorityPrice}</div>
-      <div>Order Price: {data.orderPrice}</div>
-      <div>Status: {data.status}</div>
-      <div>Time: {formatOrderDeliveryTime(data.estimatedDelivery)}</div>
+    <div className="mx-auto max-w-md rounded-2xl bg-stone-900 p-4">
+      <div className="text-xl font-bold">Hi, {data.customer}</div>
+      <div className="text-lg font-bold">Your order id is {data.id}</div>
+      <div className="py-8">
+        <p className="opacity-80">Your cart order contains</p>
+        <ul className="flex flex-wrap gap-4">
+          {data.cart.map((pizza) => (
+            <li className="text-lg" key={pizza.pizzaId}>
+              {pizza.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+      {data.priority && (
+        <div className="text-lg opacity-90">
+          Your order is Priotized at the price of {data.priorityPrice}
+        </div>
+      )}
+      <div className="text-xl font-bold">Total Price: {data.orderPrice}</div>
+      <div className="pt-4">
+        Your order is <span className="text-lg font-bold">{data.status}</span>
+      </div>
+      <div>
+        Will be delivered at{' '}
+        <span className="text-lg font-bold">
+          {formatOrderDeliveryTime(data.estimatedDelivery)}
+        </span>
+      </div>
     </div>
   )
 }
