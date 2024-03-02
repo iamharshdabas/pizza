@@ -29,36 +29,39 @@ const NewOrderPage = () => {
   const isSubmitting = navigation.state === 'submitting'
 
   return (
-    <Form className="space-y-4 rounded-2xl bg-stone-800 p-4" method="POST">
-      <div className="space-x-4">
+    <Form
+      className="mx-auto max-w-sm space-y-4 rounded-2xl bg-stone-900 p-4"
+      method="POST"
+    >
+      <div className="flex flex-col gap-4">
         <label className="text-xl">Name</label>
         <input
-          className="rounded-xl bg-amber-800 px-4 py-2"
+          className="max-w-sm rounded-xl bg-stone-800 px-4 py-2"
           type="text"
           name="customer"
           required
         />
       </div>
-      <div className="space-x-4">
+      <div className="flex flex-col gap-4">
         <label className="text-xl">Phone number</label>
         <input
-          className="rounded-xl bg-amber-800 px-4 py-2"
+          className="max-w-sm rounded-xl bg-stone-800 px-4 py-2"
           type="tel"
           name="phone"
           required
         />
       </div>
-      <div className="space-x-4">
+      <div className="flex flex-col gap-4">
         <label className="text-xl">Address</label>
         <input
-          className="rounded-xl bg-amber-800 px-4 py-2"
+          className="max-w-sm rounded-xl bg-stone-800 px-4 py-2"
           type="text"
           name="address"
           required
         />
       </div>
       <div className="space-x-4">
-        <label className="text-xl">Priority</label>
+        <label className="text-xl">Prioritize order ?</label>
         <input className="rounded-xl" type="checkbox" name="priority" />
       </div>
       <input type="hidden" name="cart" value={JSON.stringify(fakeCart)} />
