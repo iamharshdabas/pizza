@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import fakeCart from '../fakeCart'
 import CartPizzaType from '../types/CartPizzaType'
 
 type State = {
@@ -20,7 +19,6 @@ type DecrementItemAction = {
 
 const initialState: State = {
   cart: [],
-  // cart: fakeCart,
 }
 
 const cartSlice = createSlice({

@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
-import PizzaType from '../types/Pizza'
 import { addItem } from '../redux/cartSlice'
 import CartPizzaType from '../types/CartPizzaType'
+import PizzaType from '../types/Pizza'
 
 type Props = {
   pizza: PizzaType
