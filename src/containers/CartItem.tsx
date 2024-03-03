@@ -13,7 +13,7 @@ type Props = {
 
 const CartItem = ({ pizza }: Props) => {
   const dispatch = useDispatch()
-  const quantity = useSelector((state) => getQuantity(state, pizza.pizzaId))
+  const quantity = useSelector(getQuantity(pizza.pizzaId))
 
   const handleDecrement = () => {
     if (quantity <= 1) return

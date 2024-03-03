@@ -74,7 +74,7 @@ const getCart = (state: RootState) => {
   return state.cart.cart
 }
 
-const getQuantity = (state: RootState, id: number) => {
+const getQuantity = (id: number) => (state: RootState) => {
   const item = state.cart.cart.find((child) => child.pizzaId === id)
   return item?.quantity
 }
