@@ -21,7 +21,7 @@ const MenuItem = ({ pizza }: Props) => {
           </ul>
         </div>
         <div className="mt-2">
-          <button className="rounded-xl border border-amber-600 px-4 py-2">
+          <button className="rounded-xl border border-amber-600 px-4 py-2 hover:bg-stone-900">
             Add to Cart
             <span className="text-amber-600"> ${pizza.unitPrice}</span>
           </button>
