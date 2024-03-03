@@ -28,25 +28,32 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    // TODO: add alert if item already exists
     addItem(state: State, action: AddItemAction) {
+      const itemExists = state.cart.find(
+        (child) => child.pizzaId == action.payload.pizzaId
+      )
+      if (itemExists != undefined) return alert('Item is already in the cart')
       state.cart.push(action.payload)
     },
+
     removeItem(state: State, action: RemoveItemAction) {
       state.cart.filter((child) => child.pizzaId !== action.payload)
     },
+
     incrementItem(state: State, action: IncrementItemAction) {
       const item = state.cart.find((child) => child.pizzaId === action.payload)
       if (!item) return
       item.quantity++
       item.totalPrice = item.quantity * item.unitPrice
     },
+
     decrementItem(state: State, action: DecrementItemAction) {
       const item = state.cart.find((child) => child.pizzaId === action.payload)
       if (!item) return
       item.quantity--
       item.totalPrice = item.quantity * item.unitPrice
     },
+
     clearCart(state: State) {
       state.cart = []
     },
