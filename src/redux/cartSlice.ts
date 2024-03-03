@@ -4,6 +4,9 @@ import CartPizzaType from '../types/CartPizzaType'
 type State = {
   cart: CartPizzaType[]
 }
+type RootState = {
+  cart: State
+}
 type AddItemAction = {
   payload: CartPizzaType
 }
@@ -50,7 +53,17 @@ const cartSlice = createSlice({
   },
 })
 
+const getTotalItems = (state: RootState) => {
+  return state.cart.cart.reduce((acc, cur) => acc + cur.quantity, 0)
+}
+
+const getTotalPrice = (state: RootState) => {
+  return state.cart.cart.reduce((acc, cur) => acc + cur.totalPrice, 0)
+}
+
 export const { addItem, removeItem, incrementItem, decrementItem, clearCart } =
   cartSlice.actions
+
+export { getTotalItems, getTotalPrice }
 
 export default cartSlice.reducer
