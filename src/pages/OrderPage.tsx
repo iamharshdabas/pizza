@@ -29,18 +29,22 @@ const OrderPage = () => {
         <p className="opacity-80">Your cart order contains</p>
         <ul className="flex flex-wrap gap-4">
           {data.cart.map((pizza) => (
-            <li className="text-lg" key={pizza.pizzaId}>
-              {pizza.name}
+            <li
+              className="rounded-2xl bg-stone-800 px-4 py-1 text-lg shadow-lg"
+              key={pizza.pizzaId}
+            >
+              {pizza.quantity} {pizza.name}
             </li>
           ))}
         </ul>
       </div>
+      <div className="text-xl font-bold">Total Price: ${data.orderPrice}</div>
       {data.priority && (
         <div className="text-lg opacity-90">
-          Your order is Priotized at the price of {data.priorityPrice}
+          Your order is Priotized at the price of{' '}
+          <span className="font-bold">${data.priorityPrice}</span>
         </div>
       )}
-      <div className="text-xl font-bold">Total Price: {data.orderPrice}</div>
       <div className="pt-4">
         Your order is <span className="text-lg font-bold">{data.status}</span>
       </div>
