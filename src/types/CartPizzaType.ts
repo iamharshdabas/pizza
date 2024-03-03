@@ -1,9 +1,9 @@
 type CartPizzaType = {
-  addIngredients: string[]
+  addIngredients?: string[]
   name: string
   pizzaId: number
   quantity: number
-  removeIngredients: string[]
+  removeIngredients?: string[]
   totalPrice: number
   unitPrice: number
 }
