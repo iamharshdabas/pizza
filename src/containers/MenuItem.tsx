@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux'
 import { addItem } from '../redux/cartSlice'
 import CartPizzaType from '../types/CartPizzaType'
 import PizzaType from '../types/Pizza'
+import { useState } from 'react'
 
 type Props = {
   pizza: PizzaType
@@ -9,16 +10,25 @@ type Props = {
 
 const MenuItem = ({ pizza }: Props) => {
   const dispatch = useDispatch()
+  const [quantity, setQuantity] = useState(1)
+
+  const handleDecrement = () => {
+    if (quantity <= 1) return
+    setQuantity((quantity) => (quantity -= 1))
+  }
+
+  const handleIncrement = () => {
+    setQuantity((quantity) => (quantity += 1))
+  }
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
     const newItem: CartPizzaType = {
       name: pizza.name,
-
       pizzaId: pizza.id,
-      quantity: 1,
+      quantity: quantity,
       unitPrice: pizza.unitPrice,
-      totalPrice: pizza.unitPrice * 1,
+      totalPrice: pizza.unitPrice * quantity,
     }
     dispatch(addItem(newItem))
   }
@@ -39,6 +49,23 @@ const MenuItem = ({ pizza }: Props) => {
           </ul>
         </div>
         <div className="mt-2">
+          <div className="pb-4">
+            <button
+              className="rounded-2xl bg-stone-900 px-2 text-lg"
+              onClick={handleDecrement}
+            >
+              -
+            </button>
+            <span className="mx-2 rounded-2xl bg-amber-600 px-2 text-black">
+              {quantity}
+            </span>
+            <button
+              className="rounded-2xl bg-stone-900 px-2 text-lg"
+              onClick={handleIncrement}
+            >
+              +
+            </button>
+          </div>
           <button
             className="rounded-xl border border-amber-600 px-4 py-2 hover:bg-stone-900"
             onClick={handleClick}
