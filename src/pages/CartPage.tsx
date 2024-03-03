@@ -13,10 +13,10 @@ const BackToMenu = ({ navigateToMenu }: Props) => {
   return (
     <>
       <button
-        className="m-4 rounded-2xl bg-amber-600 px-4 py-2 text-black"
+        className="rounded-2xl border border-amber-600 px-4 py-2 hover:bg-amber-600 hover:text-black"
         onClick={navigateToMenu}
       >
-        Back to Menu ?
+        Back to Menu
       </button>
     </>
   )
@@ -31,18 +31,33 @@ const CartPage = () => {
     navigate('/menu')
   }
 
+  const orderNow = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    navigate('/order/new')
+  }
+
   if (cart.length === 0) {
     return (
       <div className="mx-auto rounded-2xl bg-stone-900 text-lg">
         <h1 className="p-4">Threre is nothing in the cart</h1>
-        <BackToMenu navigateToMenu={navigateToMenu} />
+        <div className="p-4">
+          <BackToMenu navigateToMenu={navigateToMenu} />
+        </div>
       </div>
     )
   }
 
   return (
     <div className="mx-auto rounded-2xl bg-stone-900">
-      <BackToMenu navigateToMenu={navigateToMenu} />
+      <div className="flex items-center justify-between p-4">
+        <BackToMenu navigateToMenu={navigateToMenu} />
+        <button
+          onClick={orderNow}
+          className="rounded-2xl bg-amber-600 px-4 py-2 text-black"
+        >
+          Order Now
+        </button>
+      </div>
       <ul className="space-y-4">
         {cart.map((pizza) => (
           <CartItem key={pizza.pizzaId} pizza={pizza} />
