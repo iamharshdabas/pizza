@@ -31,8 +31,8 @@ const CartItem = ({ pizza }: Props) => {
   return (
     <li className="flex items-center justify-between rounded-2xl p-4 hover:bg-stone-800">
       <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <h1 className="px-2 text-lg font-bold">{pizza.name}</h1>
-        <h3>${pizza.totalPrice}</h3>
+        <h1 className="px-2 text-lg">{pizza.name}</h1>
+        <h3 className="font-bold">${pizza.totalPrice}</h3>
       </div>
       <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
         <div>

@@ -48,7 +48,8 @@ const OrderPage = () => {
               className="rounded-2xl bg-stone-800 px-4 py-1 text-lg shadow-lg"
               key={pizza.pizzaId}
             >
-              {pizza.quantity} {pizza.name}
+              <span className="font-bold">{pizza.quantity} </span>
+              {pizza.name}
             </li>
           ))}
         </ul>
