@@ -41,7 +41,7 @@ const OrderPage = () => {
         {isCopied ? '(copied)' : '(click to copy)'}
       </div>
       <div className="py-8">
-        <p className="opacity-80">Your cart order contains</p>
+        <p className="opacity-80">Your order contains</p>
         <ul className="flex flex-wrap gap-4">
           {order.cart.map((pizza) => (
             <li

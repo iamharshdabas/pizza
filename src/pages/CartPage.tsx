@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { getCart } from '../redux/cartSlice'
+import { getCart, getTotalPrice } from '../redux/cartSlice'
 import { useNavigate } from 'react-router-dom'
 import CartItem from '../containers/CartItem'
 
@@ -25,6 +25,7 @@ const BackToMenu = ({ navigateToMenu }: Props) => {
 const CartPage = () => {
   const navigate = useNavigate()
   const cart = useSelector(getCart)
+  const totalPrice = useSelector(getTotalPrice)
 
   const navigateToMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
@@ -55,7 +56,7 @@ const CartPage = () => {
           onClick={orderNow}
           className="rounded-2xl bg-amber-600 px-4 py-2 text-black"
         >
-          Order Now
+          Order Now for ${totalPrice}
         </button>
       </div>
       <ul className="space-y-4">
