@@ -2,6 +2,8 @@ import { redirect } from 'react-router-dom'
 import NewOrderType from '../types/NewOrderType'
 import OrderType from '../types/OrderType'
 import { createOrder } from './restaurantApi'
+import store from '../redux/store'
+import { clearCart } from '../redux/cartSlice'
 
 const isNumericPhoneNumber = (phoneNumber: string): boolean => {
   const numericRegex = /^[0-9]+$/
@@ -30,6 +32,8 @@ export const newOrderAction = async ({ request }) => {
 
   const newOrder = await createOrder(order)
   const newOrderData: OrderType = newOrder.data
+
+  store.dispatch(clearCart())
 
   return redirect(`/order/${newOrderData.id}`)
 }
