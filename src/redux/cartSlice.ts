@@ -29,10 +29,6 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem(state: State, action: AddItemAction) {
-      const itemExists = state.cart.find(
-        (child) => child.pizzaId == action.payload.pizzaId
-      )
-      if (itemExists != undefined) return alert('Item is already in the cart')
       state.cart.push(action.payload)
     },
 
