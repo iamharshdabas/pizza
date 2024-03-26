@@ -40,7 +40,7 @@ const MenuItem = ({ pizza }: Props) => {
         <img className="mx-auto" src={pizza.imageUrl} alt={pizza.name} />
       </div>
 
-      <div className="flex items-center justify-between bg-black p-4 sm:flex-col sm:items-start">
+      <div className="flex flex-col items-center justify-between bg-black p-4 sm:flex-col sm:items-start">
         <div>
           <h1 className="pb-1 text-xl font-bold">{pizza.name}</h1>
           <ul className="flex flex-wrap">
@@ -52,8 +52,8 @@ const MenuItem = ({ pizza }: Props) => {
         {cartQuantity > 0 ? (
           <h1 className="italic opacity-80">Item is already in the cart</h1>
         ) : (
-          <div className="mt-2">
-            <div className="pb-4">
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
+            <div>
               <button
                 className="rounded-2xl bg-stone-900 px-2 text-lg"
                 onClick={handleDecrement}

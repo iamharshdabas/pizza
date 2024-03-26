@@ -9,7 +9,7 @@ const MenuPage = () => {
   return (
     <>
       <CartFooter />
-      <ul className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <ul className="my-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
         {menu.map((pizza) => (
           <MenuItem pizza={pizza} key={pizza.id} />
         ))}
