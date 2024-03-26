@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux'
 import { Form, useNavigation } from 'react-router-dom'
 import { getCart, getTotalPrice } from '../redux/cartSlice'
-import CurrentLocation from '../components/CurrentLocation'
 import { useState } from 'react'
 
 const NewOrderPage = () => {
@@ -55,7 +54,6 @@ const NewOrderPage = () => {
           name="address"
           required
         />
-        <CurrentLocation />
       </div>
       <div className="space-x-4">
         <input
